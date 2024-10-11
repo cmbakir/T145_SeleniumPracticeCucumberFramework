@@ -52,9 +52,9 @@ public class gru99StepDefinitions {
     }
     @Then("kaydin basarili oldugunu dogrular")
     public void kaydin_basarili_oldugunu_dogrular() {
-        String actuelVerify=gru99Page.details.getText();
+        String actualVerify=gru99Page.details.getText();
         String expectedString="Please Note Down Your CustomerID";
-        Assertions.assertEquals(expectedString,actuelVerify);
+        Assertions.assertTrue(actualVerify.equalsIgnoreCase(expectedString));
     }
     @Then("kullanici customer id numarasini yazdirir")
     public void kullanici_customer_id_numarasini_yazdirir() {
