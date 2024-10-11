@@ -8,8 +8,9 @@ import org.openqa.selenium.Keys;
 import pages.Gru99Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
-public class Gru99StepDefinitions {
+public class gru99StepDefinitions {
 
     Gru99Page gru99Page=new Gru99Page();
     Faker faker=new Faker();
@@ -42,6 +43,8 @@ public class Gru99StepDefinitions {
         gru99Page.lastname.sendKeys(faker.name().lastName()+ Keys.TAB);
         gru99Page.email.sendKeys(faker.internet().emailAddress()+Keys.TAB);
         gru99Page.address.sendKeys(faker.address().city());
+        gru99Page.phone.sendKeys("5554546");
+        ReusableMethods.bekle(10);
 
         gru99Page.submitButton.click();
 
@@ -50,8 +53,8 @@ public class Gru99StepDefinitions {
     @Then("kaydin basarili oldugunu dogrular")
     public void kaydin_basarili_oldugunu_dogrular() {
         String actuelVerify=gru99Page.details.getText();
-        String expectedString="Access Details";
-        Assertions.assertTrue(actuelVerify.contains(expectedString));
+        String expectedString="Please Note Down Your CustomerID";
+        Assertions.assertEquals(expectedString,actuelVerify);
     }
     @Then("kullanici customer id numarasini yazdirir")
     public void kullanici_customer_id_numarasini_yazdirir() {

@@ -1,10 +1,10 @@
 package pages;
 
-import io.cucumber.java.zh_cn.假如;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class Gru99Page {
     public Gru99Page(){PageFactory.initElements(Driver.getDriver(),this);}
@@ -27,13 +27,13 @@ public class Gru99Page {
     @FindBy(xpath="//*[@name='addr']")
     public WebElement address;
 
-    @FindBy (xpath = "//input[@id='telephoneno']")
+    @FindBy (xpath = "//input[@name='telephoneno']")
     public WebElement phone;
 
-    @FindBy (xpath = "//input[@type='submit']")
+    @FindBy (xpath = "//input[@name='submit']")
     public WebElement submitButton;
 
-    @FindBy(xpath = "//h1")
+    @FindBy(xpath = "//*[text()='Please Note Down Your CustomerID']")
     public WebElement details;
 
     @FindBy(xpath = "//h3")
