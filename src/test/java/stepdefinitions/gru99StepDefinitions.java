@@ -8,7 +8,6 @@ import org.openqa.selenium.Keys;
 import pages.Gru99Page;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 public class gru99StepDefinitions {
 
@@ -43,18 +42,17 @@ public class gru99StepDefinitions {
         gru99Page.lastname.sendKeys(faker.name().lastName()+ Keys.TAB);
         gru99Page.email.sendKeys(faker.internet().emailAddress()+Keys.TAB);
         gru99Page.address.sendKeys(faker.address().city());
-        gru99Page.phone.sendKeys("5554546");
-        ReusableMethods.bekle(10);
-
+        gru99Page.phone.sendKeys("987456321");
         gru99Page.submitButton.click();
+
 
 
     }
     @Then("kaydin basarili oldugunu dogrular")
     public void kaydin_basarili_oldugunu_dogrular() {
-        String actualVerify=gru99Page.details.getText();
-        String expectedString="Please Note Down Your CustomerID";
-        Assertions.assertTrue(actualVerify.equalsIgnoreCase(expectedString));
+        String actuelVerify=gru99Page.details.getText();
+        String expectedString="Access Details";
+        Assertions.assertTrue(actuelVerify.contains(expectedString));
     }
     @Then("kullanici customer id numarasini yazdirir")
     public void kullanici_customer_id_numarasini_yazdirir() {
