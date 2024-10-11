@@ -42,7 +42,7 @@ public class gru99StepDefinitions {
         gru99Page.lastname.sendKeys(faker.name().lastName()+ Keys.TAB);
         gru99Page.email.sendKeys(faker.internet().emailAddress()+Keys.TAB);
         gru99Page.address.sendKeys(faker.address().city());
-        gru99Page.phone.sendKeys("987456321");
+        gru99Page.phone.sendKeys("989765464");
         gru99Page.submitButton.click();
 
 
